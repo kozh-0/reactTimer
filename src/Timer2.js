@@ -20,7 +20,9 @@ export default class Timer2 extends Component {
     componentDidUpdate() {
         localStorage.setItem('count', this.state.count);
     }
-    componentWillUnmount() {}
+    componentWillUnmount() {
+        clearInterval(this.timerId);
+    }
 
     onStart() {
         this.setState({isCounting: true});
